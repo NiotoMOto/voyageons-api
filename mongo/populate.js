@@ -6,7 +6,11 @@ const _ = require('lodash');
 const Users = require('./schemas/user');
 
 function populate(next) {
-    Users.create({ nom: 'Guillemoto', prenom: 'Antoine', userName: 'userName' });
+    Users.remove({},  () => {
+        Users.create({ lastName: 'Guillemoto', firstName: 'Antoine', userName: 'Nioto' });
+        Users.create({ lastName: 'Begain', firstName: 'Johan', userName: 'Arken' });
+        Users.create({ lastName: 'Cirjean', firstName: 'Remy', userName: 'Arken' });
+    });
 }
 
 module.exports = populate;

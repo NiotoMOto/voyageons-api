@@ -8,6 +8,8 @@ const app = express();
 const apiRoutes = require('./routes/api');
 require('pretty-error').start();
 
+const PORT = 4011;
+
 const populateDatabase = require('./mongo/populate.js');
 
 if (app.get('env') === 'development') {
@@ -28,5 +30,5 @@ app.use(apiRoutes);
 populateDatabase();
 
 app.listen(4011, function () {
-  console.log('Serveur mise en route sur le port 3000');
+  console.log(`Serveur mise en route sur le port ${PORT}`);
 });
