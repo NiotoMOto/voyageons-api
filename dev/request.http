@@ -1,0 +1,6 @@
+GET http://localhost:4011/api/v1/user
+
+###
+
+GET http://localhost:4011/api/v1/dept
+
