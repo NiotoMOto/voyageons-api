@@ -4,12 +4,14 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const app = express();
+const logger = require('morgan');
+const errorhandler = require('errorhandler');
+
+
 const apiRoutes = require('./routes/api');
-require('pretty-error').start();
 
+const app = express();
 const PORT = 4011;
-
 const populateDatabase = require('./mongo/populate.js');
 
 if (app.get('env') === 'development') {
@@ -20,6 +22,8 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
+  app.use(logger('dev'));
+  app.use(errorhandler())
 }
 
 app.use(bodyParser.json());
