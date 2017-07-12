@@ -8,9 +8,10 @@ const computedDebtRouter = new express.Router();
 
 computedDebtRouter.get("/:user", (req, res) => {
   Promise.all([
-    Debt.find({ from: req.params.user.id }).populate('to', 'from'),
+    Debt.find({ from: req.params.user }).populate('to', 'from'),
     Debt.find({ to: req.params.user }).populate('to', 'from'),
-  ]).then(([positiveDebts, negativeDebts]) => {
+  ])
+  .then(([positiveDebts, negativeDebts]) => {
     res.json({positiveDebts, negativeDebts}); 
   })
 });

@@ -1,9 +1,13 @@
-GET http://localhost:4011/api/v1/user
+
+GET http://localhost:4012/api/v1/user?populate=group
+###
+
+GET http://localhost:4012/api/v1/line?populate=from&populate=to
 
 ###
 
-GET http://localhost:4011/api/v1/dept
+GET http://localhost:4012/api/v1/dept?populate=from&populate=to
 
 ###
 
-GET http://localhost:4011/api/v1/computed/debt/59439ba2e242c27c73ac1b3d
+GET http://localhost:4012/api/v1/computed/debt/596610c30f735527f001d33d

@@ -11,7 +11,7 @@ const errorhandler = require('errorhandler');
 const apiRoutes = require('./routes/api');
 
 const app = express();
-const PORT = 4011;
+const PORT = 4012;
 const populateDatabase = require('./mongo/populate.js');
 
 if (app.get('env') === 'development') {
@@ -33,6 +33,6 @@ app.use(apiRoutes);
 
 populateDatabase();
 
-app.listen(4011, function () {
+app.listen(PORT, function () {
   console.log(`Serveur mise en route sur le port ${PORT}`);
 });
