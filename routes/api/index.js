@@ -4,6 +4,7 @@ const restify = require('express-restify-mongoose');
 
 const models = require('../../mongo/')
 const computedDebts = require('./computedDebt');
+const voyage = require('./voyage');
 
 const router = express.Router();
 
@@ -15,5 +16,6 @@ for (var model in mongoose.models) {
 }
 
 router.use('/api/v1/computed/debt', computedDebts);
+router.use('/api/v1/custom/voyage', voyage);
 
 module.exports = router;

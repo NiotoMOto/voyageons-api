@@ -28,6 +28,7 @@ if (app.get('env') === 'development') {
 
 app.use(bodyParser.json());
 app.use(methodOverride());
+app.use(cors());
 
 app.use(apiRoutes);
 
