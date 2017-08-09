@@ -8,6 +8,7 @@ const User = require('./schemas/User');
 const Line = require('./schemas/Line');
 const Debt = require('./schemas/Debt');
 const Goup = require('./schemas/Group');
+const Voyage = require('./schemas/Voyage');
 
 let saveedUsers = [];
 function populate(next) {
@@ -15,6 +16,7 @@ function populate(next) {
     User.remove({}),
     Line.remove({}),
     Debt.remove({}),
+    // Voyage.remove({}),
   ]).then(() => (
     Goup.create({ name: 'goupe 1'})
   )).then(group => (
